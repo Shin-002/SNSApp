@@ -1,21 +1,22 @@
 import React from 'react';
 import './App.css';
 
-import { createMuiTheme } from '@material-ui/core/styles/createMuiTheme';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import indigo from '@material-ui/core/colors/indigo';
+import cyan from '@material-ui/core/colors/cyan';
 import Navbar from './components/Navbar';
 
+const primaly = cyan['A700'];
 const theme = createMuiTheme({
-  palette: {
-    primary: indigo,
-    secondary: {
-      main: '#aa647b'
+    palette: {
+      primary: cyan,
+      secondary: {
+        main: '#aa647b'
+      },
     },
-  },
-  tupography: {
-    fontfamily: 'Comic Neue',
-  }
+    typography: {
+      fontFamily:'Comic Neue',
+    }
 })
 
 function App() {
