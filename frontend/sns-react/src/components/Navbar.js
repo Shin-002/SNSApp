@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {ApiContext} from '../context/ApiContext';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
-import { FILogOut, FiLogOut } from 'react-icons/fi';
+import { FiLogOut } from 'react-icons/fi';
 import { withCookies } from 'react-cookie';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,8 +24,6 @@ const Navbar = (props) => {
         props.cookies.remove('current-token');
         window.location.href = '/';
     }
-
-
     return (
         <AppBar position="static">
             <Toolbar>
@@ -35,7 +34,7 @@ const Navbar = (props) => {
                     badgeContent={3}
                     color="secondary"
                 >
-                <NotificationsIcon />
+                <NotificationsIcon />    
                 </Badge>
                 <button className="signOut" onClick={Logout()}>
                     <FiLogOut />

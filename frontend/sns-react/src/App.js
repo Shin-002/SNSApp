@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
 
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import cyan from '@material-ui/core/colors/cyan';
+import { createMuiTheme } from '@material-ui/core/styles'
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
+import indigo from '@material-ui/core/colors/indigo'
 import Navbar from './components/Navbar';
-import ApiContextProvider from './context/ApiContext';
+import ApiContextProvider from './context/ApiContext'
+import Main from './components/Main';
 
-const primaly = cyan['A700'];
 const theme = createMuiTheme({
     palette: {
-      primary: cyan,
+      primary: indigo,
       secondary: {
-        main: '#aa647b'
+        main: '#f44336'
       },
     },
     typography: {
@@ -20,13 +20,16 @@ const theme = createMuiTheme({
     }
 })
 
+
 function App() {
   return (
     <ApiContextProvider>
     <MuiThemeProvider theme={theme}>
 
       <Navbar />
-      
+      <div className="container">
+        <Main />
+      </div>
     </MuiThemeProvider>
     </ApiContextProvider>
   );
