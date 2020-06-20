@@ -10,9 +10,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {START_FETCH, FETCH_SUCCESS, ERROR_CATCHED, INPUT_EDIT, TOGGLE_MODE} from './actionTypes';
-import createSpacing from '@material-ui/core/styles/createSpacing';
+
 
 const useStyles = makeStyles((theme) => ({
+    
     paper: {
       marginTop: theme.spacing(8),
       display: 'flex',
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.secondary.main,
     },
     form: {
-      width: '100%', // Fix IE 11 issue.
+      width: '100%',
       marginTop: theme.spacing(1),
     },
     submit: {
