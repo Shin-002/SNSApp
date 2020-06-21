@@ -25,8 +25,10 @@ const Profile = ({profileData, askData}) => {
 
     return (
         <Card style={{position: 'relative', display: 'flex', marginBottom: 10}}>
-        
-            <CardMedia style={{minWidth: 100}} image={profileData.img}/>
+
+        { profileData.img ?
+            <CardMedia style={{minWidth: 100}} image={profileData.img}/> :
+            <CardMedia style={{minWidth: 100}} image="http://127.0.0.1:8000/media/image/original.png" />}
 
             <CardContent style={{padding: 5}}>
                 <Typography variant="h6">{profileData.nickName}</Typography>
