@@ -1,6 +1,7 @@
-import React, {createContext, useState, useEffect } from 'react'
-import { withCookies } from 'react-cookie'
-import axios from 'axios'
+import React, {createContext, useState, useEffect } from 'react';
+import { withCookies } from 'react-cookie';
+import axios from 'axios';
+
 export const ApiContext = createContext()
 
 const ApiContextProvider = (props) => {

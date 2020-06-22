@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 
-import { createMuiTheme } from '@material-ui/core/styles'
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
-import indigo from '@material-ui/core/colors/indigo'
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import indigo from '@material-ui/core/colors/indigo';
 import Navbar from './components/Navbar';
-import ApiContextProvider from './context/ApiContext'
+import ApiContextProvider from './context/ApiContext';
 import Main from './components/Main';
 
 const theme = createMuiTheme({

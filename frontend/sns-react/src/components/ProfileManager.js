@@ -25,14 +25,14 @@ const useStyles = makeStyles((theme) => ({
         '& .profile-image': {
             width: 150,
             height: 150,
-            objectFit: 'cover',
+            ojectFit: 'cover',
             maxWidth: '100%',
             borderRadius: '50%',
             backgroundColor: 'white',
-        },
+        }, 
         '& .profile-details': {
             textAlign: 'center',
-            '& span svg': {
+            '& span, svg': {
                 verticalAlign: 'middle',
                 color: 'lightgrey',
                 fontFamily: '"Comic Neue", cursive',
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
         '& hr': {
             border: 'none',
             margin: '0 0 7px 0'
-        },                                                                     
+        },
     }
 }))
 
@@ -54,19 +54,19 @@ const ProfileManager = () => {
         fileInput.click()
     }
     const handleInputChange = () => event => {
+
         const value = event.target.value
         const name = event.target.name
         setEditedProfile({...editedProfile, [name]: value})
     }
-
     return (
         <div className={classes.profile}>
             <div className="image-wrapper">
-                { profile.id ? 
+                { profile.id ?
                 <img src={profile.img} alt="profile" className="profile-image"/> :
                 <img src="http://127.0.0.1:8000/media/image/original.png" alt="profile" className="profile-image"/>
                 }
-                <input
+                <input 
                     type="file"
                     id="imageInput"
                     hidden="hidden"
@@ -80,22 +80,25 @@ const ProfileManager = () => {
             {editedProfile.id ?
                 (editedProfile.nickName ?
                     <button className="user" onClick={()=>editProfile()}><FaUserEdit/></button> :
-                    <button className="user-invalid" disabled><FaUserEdit/></button> )
+                    <button className="user-invalid" disabled ><FaUserEdit/></button> )
                 :
                 (editedProfile.nickName && cover.name ?
-                    <button className="user" onClick={()=>editProfile()}><BsPersonPlus/></button> :
-                    <button className="user-invalid" disabled><BsPersonPlus/></button> )
+                    <button className="user" onClick={()=>createProfile()}><BsPersonPlus/></button> :
+                    <button className="user-invalid" disabled ><BsPersonPlus/></button> )           
             }
             <button className="trash" onClick={()=>deleteProfile()}><BsTrash/></button>
 
             <div className="profile-details">
-                <BsPersonCheckFill className="badge"/> {profile && <span>{profile.nickName}</span>}
-                <hr />
+                 <BsPersonCheckFill className="badge"/> {profile && <span>{profile.nickName}</span> }
+                 <hr />
+                
                 <input type="text" value={editedProfile.nickName} name="nickName" onChange={handleInputChange()}/>
+
                 <hr />
                 <span>Joined at {profile.created_on} </span>
                 <hr />
                 <LocationOn /> <span>JAPAN</span>
+                
             </div>
         </div>
     )
